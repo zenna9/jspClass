@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class DispatcherServlet extends HttpServlet{
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	System.out.println(">>>dispatcherServlet");
-	
-	
+
+
 	}	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
