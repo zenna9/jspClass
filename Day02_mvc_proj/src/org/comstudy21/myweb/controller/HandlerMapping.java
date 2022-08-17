@@ -37,4 +37,8 @@ public class HandlerMapping {
          //this.ctrlMap.putAll(ctrlMap);
       }
    }
+
+   public MyController getController(String key) {
+      return ctrlMap.get(key);
+   }
 }
