@@ -1,4 +1,4 @@
-package org.comstudy21.myweb.controller.member;
+package org.comstudy21.myweb.member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
