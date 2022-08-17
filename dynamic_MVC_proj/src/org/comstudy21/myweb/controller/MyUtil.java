@@ -37,9 +37,9 @@ public class MyUtil {
 		
 		//앞부분은 ctxPath(프로젝트이름인부분..)
 //		System.out.println("ctxpath : "+ctxPath);
-//		System.out.println("path : "+path);
+		System.out.println("path : "+path);
 //		System.out.println("filename"+fileName);
-//		System.out.println("dirName : "+dirName);
+		System.out.println("dirName : "+dirName);
 	    return pathVO;
 	}
 }

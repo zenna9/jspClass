@@ -5,10 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.comstudy21.myweb.controller.MyController;
 
-public class ShopController  implements MyController{
+public class ShopController implements MyController {
 
 	@Override
 	public String handleRequest(HttpServletRequest req, HttpServletResponse resp) {
-		return null;
+		//System.out.println(">>> ShopController ...");
+		return "shop/list";
 	}
+
 }

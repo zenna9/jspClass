@@ -8,7 +8,7 @@ public class PathVO {
 	private String prefix;
 	
 	public PathVO() {
-		this("","","","",""); //√ ±‚»≠?
+		this("","","","","");
 	}
 
 	public PathVO(String path, String fileName, String dirName, String suffix, String prefix) {

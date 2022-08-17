@@ -1,39 +1,39 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.Map"%>
-
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-<h1 style="background-color:blue"> Ã¤Àº¾² JSP ÆäÀÌÁö </h1>
-<hr/>
-<p>message income : <strong>${message}</strong></p>
-</hr>
-<p> where you can go : <strong>${items.get("È¸¿ø¸ñ·Ï")}</strong></p>
+<p>message ${message}</p>
+
+<h3>Welcome</h3>
+<h1>ê¸¸ë™ì´ì˜ í™ˆí˜ì´ì§€ - home</h1>
+<hr />
 <ul>
-<% Map items = (Map)request.getAttribute("items");
-	Set keys = items.keySet();
-	Iterator iterator = keys.iterator();
-	//ÀÌÁ¦ ÀÌÅÍ·¹ÀÌÅÍ¸¦ ¹İº¹ÇÒ ¼ö ÀÖÀ½
-	while(iterator.hasNext()){
-		String key = (String)iterator.next();
+<%
+Map items = (Map)request.getAttribute("items");
+Set keys = items.keySet();
+Iterator iterator = keys.iterator();
+while(iterator.hasNext()) {
+	String key = (String)iterator.next();
 %>
-<li><a href="<%=items.get(key)%>"><%=key %></li>
-<!-- 
-	<li><a href="member/list.do">È¸¿ø¸ñ·Ïss(member/list.do)</a></li>
-	<li><a href="bbs/list.do">°Ô½ÃÆÇss(bbs/list.do)</a></li>
-	<li><a href="shop/list.do">¼îÇÎ¸ôss(shop/list.do)</a></li>
- -->
-<%} %>	
-<a href="member/list.ldd">dfdfdf</a><br>
-	<a href="/Day02_mvc_proj/">index.html·Î µ¹¾Æ°¡±â</a>
+<!-- HTML ì½”ë“œ -->
+<li><a href="<%=items.get(key) %>"><%=key %></a></li>
+<%
+}
+%>
 </ul>
+
 </body>
 </html>
+
+
+
+
