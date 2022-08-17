@@ -2,6 +2,7 @@ package org.comstudy21.myweb.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,11 @@ public class DispatcherServlet extends HttpServlet {
 //	System.out.println("path : "+path);
 	
 	//home.jsp 페이지로 forward시키려함
-	req.getRequestDispatcher("/WEB-INF/views/home.jsp");
+    RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/home.jsp");
+    //이제 포워드
+    dispatcher.forward(req, resp);
+
+	
 	}
 	
 	   @Override
