@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class DispatcherServlet extends HttpServlet {
-
+	HomeController ctrl = new HomeController();
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	System.out.println(">>디스패쳐서블릿...");
 //	System.out.println(req.getMethod()+" 방식으로 들어옴");
@@ -20,10 +20,11 @@ public class DispatcherServlet extends HttpServlet {
 //	System.out.println("path : "+path);
 	
 	//home.jsp 페이지로 forward시키려함
-    RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/home.jsp");
+//    RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/home.jsp");
+    String viewname = ctrl.handleRequest(req,resp);
+	RequestDispatcher dispatcher = req.getRequestDispatcher(viewname);
     //이제 포워드
     dispatcher.forward(req, resp);
-
 	
 	}
 	
