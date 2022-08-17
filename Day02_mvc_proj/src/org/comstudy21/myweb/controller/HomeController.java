@@ -7,16 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HomeController {
-	static Map<String, String> items = new HashMap();
-	//static 초기화
-	static {
-		//타이틀을 키로 쓰고 url을 value로 쓰려구..
-		items.put("회원목록","member/list.do");
-		items.put("게시판","bbs/list.do");
-		items.put("shoppingmall","shop/list.do");
-	}
-	public String handleRequest(HttpServletRequest req, HttpServletResponse resp) {
+	static Map<String, String> items = null;
+	static public String handleRequest(HttpServletRequest req, HttpServletResponse resp) {
 		System.out.println("homecontroller...");
+		
+		//상대경로에서 폴더이름 중첩되는것 해결하기위해
+		String ctxPath = req.getContextPath();
+      if(items == null){
+          items = new HashMap();
+          items.put("회원목록", ctxPath + "/member/list.do");
+          items.put("게시판", ctxPath + "/bbs/list.do");
+          items.put("쇼핑몰", ctxPath + "/shop/list.do");
+       }
+
 		req.setAttribute("message", "hello, from homecontroller");
 		req.setAttribute("items", items);
 		return "/WEB-INF/views/home.jsp";
