@@ -6,9 +6,10 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HomeController {
+public class HomeController implements MyController {
 	static Map<String, String> items = null;
-	static public String handleRequest(HttpServletRequest req, HttpServletResponse resp) {
+	@Override
+	public String handleRequest(HttpServletRequest req, HttpServletResponse resp) {
 		System.out.println("homecontroller...");
 		
 		//상대경로에서 폴더이름 중첩되는것 해결하기위해

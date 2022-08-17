@@ -1,17 +1,20 @@
 package org.comstudy21.myweb.controller;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import static org.comstudy21.myweb.controller.MyUtil.initPathAttr;
 
 public class DispatcherServlet extends HttpServlet {
-	HomeController ctrl = new HomeController();
+	MyController ctrl = new HomeController();
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	System.out.println(">>디스패쳐서블릿...");
+	
+	PathVO pathVO = initPathAttr(req,resp);
+	
 //	System.out.println(req.getMethod()+" 방식으로 들어옴");
 	
 	String reqUri = req.getRequestURI();
