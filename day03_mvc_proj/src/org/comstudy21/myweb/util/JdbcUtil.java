@@ -18,12 +18,12 @@ public class JdbcUtil {
 			Class.forName("org.h2.Driver");
 			//드라이버를 찾음과 동시에 객체화해주는 구문
 			//복사한 경로를 붙여줬지만 확장자는 빼줌
-			System.out.println("드라이버 검색 성공");
+//			System.out.println("드라이버 검색 성공");
 			
 			//DB검색시 .... DriverManager를 사용해 커넥션을 가져오고
 			// 메서드들을 이용해 추가 sql을 이용하게 됨
 			conn = DriverManager.getConnection(url, user, password);
-			System.out.println("conn : "+conn);
+//			System.out.println("conn : "+conn);
 		} catch (ClassNotFoundException e) {
 			System.out.println("driver search failed.....>>");
 			e.printStackTrace();
