@@ -22,6 +22,7 @@ public class SaramDAO {
 	private Statement stmt;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
+	private SaramDTO dto = new SaramDTO();
 	
    public List<SaramDTO> selectAll() {
 	   return null;
@@ -44,10 +45,11 @@ public class SaramDAO {
 		pstmt.setString(2, name);
 		pstmt.setString(3, phone);
 		pstmt.setString(4, email);
+		pstmt.executeUpdate();
+		JdbcUtil.close(conn,pstmt,null);
 	   } catch (SQLException e) {
 		e.printStackTrace();
 	   }
-	   
    }
    
    public void delete(String whatdelete) {
@@ -61,14 +63,29 @@ public class SaramDAO {
 //    	  pstmt.setInt(1, whatdelete);
     	  System.out.println("dddddddsq : "+pstmt.toString());
     	  
-    	  System.out.println("z: delete sentence is done");
+    	  int resul = pstmt.executeUpdate();
+    	  if (resul>0) System.out.println("z: delete sentence is done");
+    	  JdbcUtil.close(conn,pstmt,null);
       } catch (SQLException e) {
     	  System.out.println("z: error in 50 line");
       }
    }
    
-   public void insert(SaramDTO dto) {
-	   
+   public void insert(String name, String phone, String email) {
+      try {
+    	  String sql = this.INSERT;
+    	  pstmt = conn.prepareStatement(sql);
+	      pstmt.setString(1, name); //몇번째 물음표에, 뭘 넣을건지
+		  pstmt.setString(2, phone);
+		  pstmt.setString(3, email);
+    	  System.out.println("dddddddsq : "+pstmt.toString());
+    	  
+    	  int resul = pstmt.executeUpdate();
+    	  if (resul>0) System.out.println("z: insert sentence is done");
+    	  JdbcUtil.close(conn,pstmt,null);
+      } catch (SQLException e) {
+    	  System.out.println("z: error in 50 line");
+      }
    }
 
 }

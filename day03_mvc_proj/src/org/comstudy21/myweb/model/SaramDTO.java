@@ -12,6 +12,8 @@ public class SaramDTO {
 		this.phone = phone;
 		this.email = email;
 	}
+	public SaramDTO() {
+	}
 	public int getId() {
 		return id;
 	}
