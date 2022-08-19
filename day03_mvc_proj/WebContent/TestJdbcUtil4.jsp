@@ -11,14 +11,19 @@
 	<%
 	SaramDAO dao = new SaramDAO();
 	//keonhee 추가
-	dao.update(7, "Keonhee", "010-01", "kk@na.xo")	;
-	
+	dao.update(2, "deonhee", "010-01", "kk@na.xo")	;
 	
 	//saram 테이블에서 name이 test인 행 삭제
 
 	String whatdelete = "Test";
 	dao.delete(whatdelete);
+	
+	dao.insert("CHAE-LIN", "82-01", "leena@c.c");
+	
+	
 	response.sendRedirect("TestJdbcUtil.jsp");
+	
+	
 	%>
 </body>
 </html>

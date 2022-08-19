@@ -33,7 +33,7 @@
 			
 			//처리가 끝났으면 연결을 끊어줘야함
 		}
-		JdbcUtil.close(conn, stmt, rs); //생성된것의 역순으로 꺼주면 됨
+		JdbcUtil.close(conn, stmt, null); //생성된것의 역순으로 꺼주면 됨
 		
 		//입력되는것 테스트 start
 		
