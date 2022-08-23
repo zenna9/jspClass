@@ -9,4 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  
+  <servlet>
+  	<servlet-name>reservation</servlet-name>
+  	<servlet-class>org.zen.rest.MainServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>reservation</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
 </web-app>
