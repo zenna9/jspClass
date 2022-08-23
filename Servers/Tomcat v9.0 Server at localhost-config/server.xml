@@ -152,7 +152,23 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="xhomework0820" path="/xhomework0820" reloadable="true" source="org.eclipse.jst.jee.server:xhomework0820"/><Context docBase="dynamic_MVC_proj" path="/dynamic_MVC_proj" reloadable="true" source="org.eclipse.jst.jee.server:dynamic_MVC_proj"/></Host>
+      
+     <Context docBase="day07_jsp_ex01" path="/day07_jsp_ex01" reloadable="true" source="org.eclipse.jst.jee.server:day07_jsp_ex01">
+         <Resource name="jdbc/h2DB"
+       auth="Container"
+       type="javax.sql.DataSource"
+       username="sa"
+       password="12345"
+       driverClassName="org.h2.Driver"
+       url="jdbc:h2:tcp://localhost/~/test"
+       maxTotal="8"
+       maxIdle="4"/>
+     
+     
+     </Context>
+     
+     
+     </Host>
     </Engine>
   </Service>
 </Server>
