@@ -14,15 +14,19 @@ public class ReservationDAO {
 	private PeopleDTO pedto = new PeopleDTO();
 	private ProductDTO prdto = new ProductDTO();
 	
-	public String reservationList() {
-		String ret = null;
+	public List<Object> reservationList() {
+		List<Object> ret = null;
 		try {
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery("select name from people , product where people.rno =product.rno and product.rno =1008");
-			ret = rs.toString();
+			rs = stmt.executeQuery("select name from people, product where people.rno =product.rno and product.rno =1008");
+			while(rs.next()){
+
+			}
 		} catch (SQLException e) {
 			System.out.println("z: problem with reservationDAO.reservationList");
 			e.printStackTrace();
+		}finally{
+			conn.close();
 		}
 		return ret;
 	}
