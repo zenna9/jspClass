@@ -2,10 +2,23 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>index</title>
+<title>zenSHOPPING</title>
+<style>
+.login {
+	width: 40wh;
+	padding:6vh;
+}
+.home{
+	cursor : pointer;
+}
+</style>
 </head>
 <body>
-	<h1>welcome to BBBB kitchen!</h1>
+	<h1 class="home" onclick="location.href='login/login.do'">Hello, ShoppingMall!</h1>
+	<hr/>
+	<div class="login">
+		<button onclick="location.href='login/login.do'" >로그인하기</button>
+	</div>
 	<hr/>
 	<a href="reservation/reservation.do"><button>예약신청(고객용)</button></a>
 	<a href="reslist/reslist.do"><button>(관리자) 예약 고객 목록 </button></a>

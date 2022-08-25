@@ -28,5 +28,4 @@ public class ProductDAO {
    static public void removeOne(int pno) {
 	   list.remove(pno);
    }
-   
 }

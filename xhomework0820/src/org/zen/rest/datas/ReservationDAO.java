@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 public class ReservationDAO {
 	private Connection conn = JdbcUtil.getConnection();
@@ -14,7 +15,7 @@ public class ReservationDAO {
 	private PeopleDTO pedto = new PeopleDTO();
 	private ProductDTO prdto = new ProductDTO();
 	
-	public List<Object> reservationList() {
+	public List<Object> reservationList() throws SQLException {
 		List<Object> ret = null;
 		try {
 			stmt = conn.createStatement();

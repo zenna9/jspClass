@@ -18,10 +18,15 @@ switch(request.getParameter("cmd")){
 
 		ProductDAO dao = new ProductDAO();
 		ProductDTO product = dao.selectOne(new ProductDTO(pno,"","",0,0));
-		product.setEa(ea);
-		// session's cartList
-		cartList.add(product);
-	
+		int ind = cartList.indexOf(product);
+		if (ind != -1){
+			ProductDTO areadyExist = cartList.get(ind);
+			int areEa = areadyExist.getEa()+ea;
+			areadyExist.setEa(areEa);
+		}else{
+			product.setEa(ea);
+			cartList.add(product);
+		}
 		response.sendRedirect("cart_list.jsp");
 		break;
 	case "remove":
