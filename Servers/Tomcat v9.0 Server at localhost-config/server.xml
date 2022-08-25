@@ -156,7 +156,7 @@
      
      
      
-     <Context docBase="xhomework0824" path="/org.comstudy21.myweb" reloadable="true" source="org.eclipse.jst.jee.server:xhomework0824"/><Context docBase="day08_jsp" path="/day08_jsp" reloadable="true" source="org.eclipse.jst.jee.server:day08_jsp"/><Context docBase="xhomework0820" path="/xhomework0820" reloadable="true" source="org.eclipse.jst.jee.server:xhomework0820"/></Host>
+     <Context docBase="day08_websocket" path="/day08_websocket" reloadable="true" source="org.eclipse.jst.jee.server:day08_websocket"/></Host>
     </Engine>
   </Service>
 </Server>
